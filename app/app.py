@@ -1,10 +1,18 @@
-from fastapi import FastAPI, Form
-from classes.Equipment import Equipment
+from fastapi import FastAPI, Form, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+
 import json
 from pathlib import Path
 
+from classes.Equipment import Equipment
+
+
 
 app = FastAPI()
+templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 DATA_PATH = Path(__file__).resolve().parent / "data.json"
 
@@ -38,4 +46,11 @@ def get_equipment():
         data = []
     
     return {"Equipment": data}
+
+@app.get("/", response_class=HTMLResponse)
+def home_page(request: Request):
+    return templates.TemplateResponse(
+        "home.jinja2",
+        {'request': request}
+    )
     
