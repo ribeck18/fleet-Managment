@@ -16,7 +16,7 @@ class Equipment:
 
         :return: equipment object in string form
         """
-        return f"{self.name}, {self.info}, {self.id}"
+        return f"{self.name}, {self.year}, {self.status}, {self.notes}, {self.id}"
     
     def get_json(self):
         """
@@ -24,5 +24,12 @@ class Equipment:
         
         :return: equipment object in dictionary form
         """
-        return self.__dict__
+        equipment_dict = {
+            "name": self.name,
+            "year": self.year,
+            "status": self.status,
+            "notes": self.notes,
+            "id": self.id
+        }
+        return equipment_dict
     

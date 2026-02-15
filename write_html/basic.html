@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <!-- <a href="/create-equipment">
+            <button>Add Equipment</button>
+        </a>
+
+        <h2>Add Equipment</h2>
+        <form method="post" action="/create-equipment">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+            <label>Year:</label>
+            <input type="text" year="year" required>
+            <label>Status:</label>
+            <input type="text" status="status" required>
+
+        </form> -->
+
+        <button type="button" onclick="ToggleForm()">Add Equipment</button>
+
+        <div id="equipment-form" style="display: none; margin-top: 1em;">
+            <form method="post" action="/add-equipment">
+                <label>Name:</label>
+                <input type="text" name="name" required>
+
+                <label>Year:</label>
+                <input type="text" year="year" required>
+
+                <label>Status:</label>
+                <input type="text" status="status" required>
+            </form>
+        </div>
+
+        <script>
+            function ToggleForm() {
+                const el = document.getElementById("equipment-form");
+                el.style.display = (el.style.display === "none") ? "block" : "none";
+            }
+        </script>
+
+    </main>
+
+
+
+
+
+
+</body>
+</html>

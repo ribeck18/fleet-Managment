@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 
@@ -18,7 +19,7 @@ DATA_PATH = Path(__file__).resolve().parent / "data.json"
 
 #Create an item and append it to the JSON file
 @app.post("/add-equipment")
-def create_equipment(name: str=Form(""), year: str=Form(""), status: str=Form("")):
+def create_equipment(name: str=Form(""), year: str=Form(""), status: str=Form(""), notes: str=Form("")):
     """
     Asks the user for a name, year, and status in order to create a new equipment item.
     Opens a file under DATA_PATH and loads the json already there. It then appends the new equipment dictionary to the list of dictionaries and rewrites the json file with the newly appended list.
@@ -29,11 +30,11 @@ def create_equipment(name: str=Form(""), year: str=Form(""), status: str=Form(""
     :type year: str
     :param status: current status of the equipment item
     :type status: str
-    
-    :returns: The path of the save file, and the equipment saved. 
+
+    :returns: Redirects the user to the home page:  Status Code 303
     """
 
-    equipment = Equipment(name, year, status)
+    equipment = Equipment(name, year, status, notes)
 
     try:
         with open(DATA_PATH, "r") as f:
@@ -44,9 +45,9 @@ def create_equipment(name: str=Form(""), year: str=Form(""), status: str=Form(""
     data.append(equipment.get_json())
 
     with open(DATA_PATH , "w") as f: 
-        json.dump(data, f, indent=4)
+        json.dump(data, f, indent=4, default=str)
     
-    return {"Saved to": str(DATA_PATH), "equipment": equipment.get_string()}
+    return RedirectResponse(url="/", status_code=303)
 
 #Return a feed of all the equip items
 @app.get("/view-equipment")
@@ -64,6 +65,7 @@ def get_equipment():
     
     return {"Equipment": data}
 
+#Get a list of equipment
 @app.get("/", response_class=HTMLResponse)
 def home_page(request: Request):
     """
@@ -75,4 +77,6 @@ def home_page(request: Request):
         "home.jinja2",
         {'request': request}
     )
+
+
     

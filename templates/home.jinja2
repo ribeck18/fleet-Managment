@@ -1,7 +1,32 @@
 {% extends "layout.jinja2"%}
 
-
-
 {% block content %}
 <h1>This is a test</h1>
+
+    <button type="button" onclick="ToggleForm()">Add Equipment</button>
+
+    <div id="equipment-form" style="display: none; margin-top: 1em;">
+        <form method="post" action="/add-equipment">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Year:</label>
+            <input type="text" name="year" required>
+
+            <label>Status:</label>
+            <input type="text" name="status" required>
+
+            <label>Notes:</label>
+            <input type="text" name="notes">
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <script>
+        function ToggleForm() {
+            const el = document.getElementById("equipment-form");
+            el.style.display = (el.style.display === "none") ? "block" : "none";
+        }
+    </script>
 {% endblock content %}
