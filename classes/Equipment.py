@@ -2,21 +2,27 @@ import uuid
 
 class Equipment:
 
-    def __init__(self, name, info):
-        self.name = name 
-        self.info = info
+    def __init__(self, name, year, status, notes=""):
+        self.name = name
+        self.year = year
+        self.status = status
+        self.notes = notes
+        self.id = uuid.uuid4()
         
-        equipid = uuid.uuid4()
-        self.id = str(equipid)
-        
-    def get_equipment(self):
+    
+    def get_string(self):
+        """
+        Return the equipment object as a string
+
+        :return: equipment object in string form
+        """
         return f"{self.name}, {self.info}, {self.id}"
     
     def get_json(self):
-        equip_dict = {
-            "name": self.name,
-            "info" : self.info,
-            "uuid" : self.id
-        }
-        return equip_dict
+        """
+        returns the equipment object as a string
+        
+        :return: equipment object in dictionary form
+        """
+        return self.__dict__
     
