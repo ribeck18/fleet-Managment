@@ -8,7 +8,7 @@ class WorkOrder():
         self.info = info 
         self.user = user
         self.severity = severity
-        self.equipment_id = equipment
+        self.equipment = equipment
         self.date = str(datetime.now())
         self.id = str(uuid.uuid4())
     

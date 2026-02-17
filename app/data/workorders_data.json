@@ -1,11 +1,11 @@
 [
     {
-        "title": "TEST",
-        "info": "info",
-        "user": "Riley",
-        "severity": "mid",
-        "equipment_id": "bce35e43-eaf8-433d-ace1-7048ebd3ca7b",
-        "date": "2026-02-16 19:04:49.258843",
-        "id": "04e0175e-32e5-4ac1-bb05-0f00e8957aa8"
+        "title": "Oil Change",
+        "info": "oil change mileage on window sticker has been reached.",
+        "user": "Riley Beck",
+        "severity": "Medium",
+        "equipment": "624d0875-4bd5-4960-99b8-6c3804bf7d1c",
+        "date": "2026-02-17 09:33:30.046223",
+        "id": "09270812-c9d0-4d1b-9a6e-2076f1bd3280"
     }
 ]

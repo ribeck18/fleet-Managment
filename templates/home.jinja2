@@ -70,10 +70,22 @@
             <input type="text" name="user" required>
 
             <label>Severity:</label>
-            <input type="text" name="severity" required>
+            <select name="severity" required>
+                <option value="" disabled selected>Select Severity</option>
+                {% for severity in ["Extreme", "High", "Medium", "Low"] %}
+                    <option value="{{ severity }}">{{ severity }}</option>
+                {% endfor %}
+            </select>
 
             <label>Equipment:</label>
-            <input type="text" name="equipment" required>
+            <select name="equipment" required>
+                <option value="" disabled selected>Select Equipment</option>
+                {% for item in equipment_list %}
+                    <option value="{{ item.id }}">
+                        {{ item.name }}
+                    </option>
+                {% endfor %}
+            </select>
 
             <button type="submit">Save</button>
         </form>

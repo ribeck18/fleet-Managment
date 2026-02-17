@@ -32,3 +32,26 @@ def create_equipment(name, year, status, notes):
 
     return equipment.get_string()
 
+def load_single_equipment(choice: str):
+    """
+    Loops over all equipment items and checks if user choice matches the equipment. Return the equipment that matches.
+    
+    :param choice: uuid of equipment item you would like to display.
+    :type choice: str
+
+    :return: returns a single equipment item as a dictionary.
+    """
+    equipment_list = load_equipment()
+    equipment ={}
+    #Loop over all equipment and check if equip uuid == choice Store chosen equipment in equipment var
+    for i in equipment_list:
+        equip_id = i["id"]
+
+        if equip_id == choice:
+            equipment = i
+
+    #If no matching equipment is founnd.
+    if equipment == {}:
+        return "No equipment found."
+    
+    return equipment

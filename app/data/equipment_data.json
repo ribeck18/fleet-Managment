@@ -1,30 +1,16 @@
 [
     {
-        "name": "Test",
-        "year": "2003",
-        "status": "hello world",
-        "notes": "testing!",
-        "id": "bce35e43-eaf8-433d-ace1-7048ebd3ca7b"
-    },
-    {
-        "name": "Testinggggg",
+        "name": "CAT 420 Backhoe",
         "year": "2020",
-        "status": "Hello World",
-        "notes": "This is a note",
-        "id": "dcfc1b6c-c165-4317-9ae0-6570a0ed0bdd"
+        "status": "Live",
+        "notes": "This is a test backhoe.",
+        "id": "2cfbbc70-bbb7-49b5-a8b1-bfb0d2209efd"
     },
     {
-        "name": "Another equipment",
-        "year": "2020",
-        "status": "new new ",
-        "notes": "Hello World",
-        "id": "5789e7ec-a2c6-49c5-be0d-b68a15283fe9"
-    },
-    {
-        "name": "NEW",
-        "year": "2010",
-        "status": "hello world",
-        "notes": "note",
-        "id": "861de593-7df3-4075-b2d3-b2a7ed99a54c"
+        "name": "FORD F-150",
+        "year": "2005",
+        "status": "Live",
+        "notes": "Jerry's truck.",
+        "id": "624d0875-4bd5-4960-99b8-6c3804bf7d1c"
     }
 ]
