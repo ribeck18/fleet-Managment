@@ -1,55 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <main>
-        <!-- <a href="/create-equipment">
-            <button>Add Equipment</button>
-        </a>
+<button type="button" onclick="ToggleEquipmentViewer">View Equipment</button>
 
-        <h2>Add Equipment</h2>
-        <form method="post" action="/create-equipment">
-            <label>Name:</label>
-            <input type="text" name="name" required>
-            <label>Year:</label>
-            <input type="text" year="year" required>
-            <label>Status:</label>
-            <input type="text" status="status" required>
-
-        </form> -->
-
-        <button type="button" onclick="ToggleForm()">Add Equipment</button>
-
-        <div id="equipment-form" style="display: none; margin-top: 1em;">
-            <form method="post" action="/add-equipment">
-                <label>Name:</label>
-                <input type="text" name="name" required>
-
-                <label>Year:</label>
-                <input type="text" year="year" required>
-
-                <label>Status:</label>
-                <input type="text" status="status" required>
-            </form>
-        </div>
-
-        <script>
-            function ToggleForm() {
-                const el = document.getElementById("equipment-form");
-                el.style.display = (el.style.display === "none") ? "block" : "none";
-            }
-        </script>
-
-    </main>
+<div id="equipment-viewer" style="border: 1px solid black; margin: 5em auto; display: flex; justify-content: center; align-items: center;">
+    {% if equipment_list %}
+        <table border="1" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in equipment_list %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.year }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.notes }}</td>
+                    <td>{{ item.id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No equipment found.</p>
+    {% endif %}
+</div>
 
 
-
-
-
-
-</body>
-</html>

@@ -10,10 +10,9 @@ class WorkOrder():
         self.severity = severity
         self.equipment_id = equipment
         self.date = datetime.now()
-        newid = uuid.uuid4()
-        self.id = str(newid)
+        self.id = str(uuid.uuid4())
     
-    def get_work_order_string(self):
+    def get_string(self):
         """
         return work order as a string
         
@@ -21,7 +20,7 @@ class WorkOrder():
         """
         return f"{self.title}, {self.info}, {self.user}, {self.severity}, {self.equipment_id}, {self.date}, {self.id}"
 
-    def get_work_order_dict(self):
+    def get_dict(self):
         """
         return work order as a dictionary
         

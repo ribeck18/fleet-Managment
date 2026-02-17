@@ -3,10 +3,12 @@
 {% block content %}
 <h1>This is a test</h1>
 
+    {# Button and form to add a new equipment item #}
     <button type="button" onclick="ToggleForm()">Add Equipment</button>
 
     <div id="equipment-form" style="display: none; margin-top: 1em;">
-        <form method="post" action="/add-equipment">
+        {# uses the /api/equipment/new endpoint. The Method matches the endpoint decorator. #}
+        <form method="post" action="/api/equipment/new">
             <label>Name:</label>
             <input type="text" name="name" required>
 
@@ -22,6 +24,37 @@
             <button type="submit">Save</button>
         </form>
     </div>
+
+    <div id="equipment-viewer" style="border: 1px solid black; margin: 5em auto; display: flex; justify-content: center; align-items: center;">
+        {% if equipment_list %}
+            <table border="1" cellpadding="8">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in equipment_list %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.year }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.notes }}</td>
+                        <td>{{ item.id }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No equipment found.</p>
+        {% endif %}
+    </div>
+
+
 
     <script>
         function ToggleForm() {

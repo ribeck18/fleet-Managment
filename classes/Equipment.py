@@ -7,7 +7,7 @@ class Equipment:
         self.year = year
         self.status = status
         self.notes = notes
-        self.id = uuid.uuid4()
+        self.id = str(uuid.uuid4())
         
     
     def get_string(self):
@@ -18,9 +18,9 @@ class Equipment:
         """
         return f"{self.name}, {self.year}, {self.status}, {self.notes}, {self.id}"
     
-    def get_json(self):
+    def get_dict(self):
         """
-        returns the equipment object as a string
+        returns the equipment object as a dictioanry
         
         :return: equipment object in dictionary form
         """
