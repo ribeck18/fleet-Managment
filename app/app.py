@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from .routers import equipment, workorder, html
+from .routers import equipment, workorder, html, user
 
 from pathlib import Path
 
@@ -22,3 +22,4 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(html.router)
 app.include_router(equipment.router)
 app.include_router(workorder.router)
+app.include_router(user.router)

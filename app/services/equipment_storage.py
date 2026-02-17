@@ -17,7 +17,7 @@ def load_equipment():
     except (FileNotFoundError, json.JSONDecodeError):
         data = []
 
-    return data
+    return data 
 
 def save_equipment(data):
     with open(DATA_PATH , "w") as f: 
