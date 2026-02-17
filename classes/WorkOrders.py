@@ -9,7 +9,7 @@ class WorkOrder():
         self.user = user
         self.severity = severity
         self.equipment_id = equipment
-        self.date = datetime.now()
+        self.date = str(datetime.now())
         self.id = str(uuid.uuid4())
     
     def get_string(self):

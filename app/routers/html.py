@@ -4,6 +4,7 @@ from fastapi.requests import Request
 from fastapi.templating import Jinja2Templates
 
 from app.services.equipment_storage import load_equipment
+from app.services.workorder_storage import load_workorders
 
 
 router = APIRouter()
@@ -18,5 +19,5 @@ def home_page(request: Request):
     """
     return templates.TemplateResponse(
         "home.jinja2",
-        {'request': request, "equipment_list": load_equipment()}
+        {'request': request, "equipment_list": load_equipment(), "workorder_list": load_workorders()}
     )

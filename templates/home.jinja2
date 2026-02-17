@@ -4,7 +4,7 @@
 <h1>This is a test</h1>
 
     {# Button and form to add a new equipment item #}
-    <button type="button" onclick="ToggleForm()">Add Equipment</button>
+    <button type="button" onclick="ToggleEquipmentForm()">Add Equipment</button>
 
     <div id="equipment-form" style="display: none; margin-top: 1em;">
         {# uses the /api/equipment/new endpoint. The Method matches the endpoint decorator. #}
@@ -25,6 +25,7 @@
         </form>
     </div>
 
+    {# Display all of the equipment as a table #}
     <div id="equipment-viewer" style="border: 1px solid black; margin: 5em auto; display: flex; justify-content: center; align-items: center;">
         {% if equipment_list %}
             <table border="1" cellpadding="8">
@@ -54,11 +55,75 @@
         {% endif %}
     </div>
 
+    {# Add new workorder items #}
+    <button type="button" onclick="ToggleWorkorderForm()">Add Workorder</button>
+
+    <div id="new-workorder" style="display: none; margin-top: 1em;">
+        <form method="post" action="/api/workorders/add">
+            <label>Name:</label>
+            <input type="text" name="title" required>
+
+            <label>Info:</label>
+            <input type="text" name="info" required>
+
+            <label>User:</label>
+            <input type="text" name="user" required>
+
+            <label>Severity:</label>
+            <input type="text" name="severity" required>
+
+            <label>Equipment:</label>
+            <input type="text" name="equipment" required>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    {# Display all of the work orders in a table #}
+        <div id="workorder-viewer" style="border: 1px solid black; margin: 5em auto; display: flex; justify-content: center; align-items: center;">
+        {% if workorder_list %}
+            <table border="1" cellpadding="8">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Info</th>
+                        <th>User</th>
+                        <th>Severity</th>
+                        <th>Equipment UUID</th>
+                        <th>Date</th>
+                        <th>Workorder UUID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in workorder_list %}
+                    <tr>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.info }}</td>
+                        <td>{{ item.user }}</td>
+                        <td>{{ item.severity }}</td>
+                        <td>{{ item.equipment }}</td>
+                        <td>{{ item.date }}</td>
+                        <td>{{ item.id }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No workorders found.</p>
+        {% endif %}
+    </div>
 
 
     <script>
-        function ToggleForm() {
+        //Toggle add equipment form button 
+        function ToggleEquipmentForm() {
             const el = document.getElementById("equipment-form");
+            el.style.display = (el.style.display === "none") ? "block" : "none";
+        }
+
+        //Toggle add work order form button 
+        function ToggleWorkorderForm() {
+            const el = document.getElementById("new-workorder");
             el.style.display = (el.style.display === "none") ? "block" : "none";
         }
     </script>

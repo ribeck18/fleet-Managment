@@ -1,4 +1,5 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Form
+from fastapi.responses import RedirectResponse
 from app.services.workorder_storage import add_workorder, load_workorders
 
 router = APIRouter()
@@ -11,6 +12,6 @@ def load_workorders():
 
 #Create a new workorder and add it to the json file
 @router.post("/api/workorders/add")
-def create_workorder(workorder: dict):
-    add_workorder(dict)
-    return {"status": f"created{workorder}"}
+def create_workorder(title: str= Form(), info: str = Form() , user: str= Form(), severity: str= Form(), equipment: str= Form()):
+    add_workorder(title, info, user, severity, equipment)
+    return RedirectResponse(url="/", status_code=303)

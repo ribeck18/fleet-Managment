@@ -7,9 +7,10 @@ from pathlib import Path
 
 
 ##To Do
-#Finish work order routes and services
-#Connect routes to app
-#Connect HTML Routes to app
+#When a work order is saved the entered equipment uuid is not shown in the table. note: it is saved in the json file.
+#Clean up the html
+#add css
+#when a workorder is created add a dropdown menu to select an equipment item. 
 
 app = FastAPI()
 
