@@ -1,0 +1,21 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<h1 style="text-decoration: underline;">Equipment Detail</h1>
+
+<h3>{{ equipment.year }} {{ equipment.name }} - {{ equipment.status }}</h3>
+
+<h4>Work Orders</h4>
+
+{# Display a list of work orders #}
+{% if workorders %}
+    <ul>
+        {% for i in workorders %}
+            <li>{{ i.title }} - {{ i.info }} -  {{ i.severity }}</li>
+        </ul>
+        {%endfor %}
+{# If there are no work orders display "No work orders found." #}
+{% else %}
+<p>No work orders found.</p>
+{% endif %}
+{% endblock content %}

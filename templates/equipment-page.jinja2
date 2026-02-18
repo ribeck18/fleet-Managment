@@ -1,0 +1,21 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+
+<h1 style="margin: 5, auto; display: flex; align-self: center;">Equipment Page Example</h1>
+
+{% if equipment_list %}
+    <ul>
+        {% for item in equipment_list %}
+            <li>
+                <a href="/equipment/{{ item.id }}">
+                    {{ item.name }} ({{ item.year }}) - {{ item.status }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Equipment Found.</p>
+{% endif %}
+{% endblock content %}
+

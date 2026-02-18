@@ -7,5 +7,14 @@
         "equipment": "624d0875-4bd5-4960-99b8-6c3804bf7d1c",
         "date": "2026-02-17 09:33:30.046223",
         "id": "09270812-c9d0-4d1b-9a6e-2076f1bd3280"
+    },
+    {
+        "title": "oil change",
+        "info": "needs oil",
+        "user": "Riley",
+        "severity": "Medium",
+        "equipment": "1b31d700-4b68-49e1-963f-f5204703ea39",
+        "date": "2026-02-18 11:12:04.449185",
+        "id": "93d26e41-099c-4ab8-9995-32193095bd39"
     }
 ]

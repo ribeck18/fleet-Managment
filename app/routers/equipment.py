@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Form
 from fastapi.responses import RedirectResponse
-from app.services.equipment_storage import load_equipment, create_equipment, load_single_equipment
+from app.services.equipment_storage import load_equipment, create_equipment, load_single_equipment_dict, Load_single_equipment_object
+from classes.Equipment import Equipment
 
 
 router = APIRouter()
@@ -24,9 +25,9 @@ def get_equipment():
 #Get a single equipment item.
 @router.get("/api/equipment/{uuid}")
 def get_item(uuid: str):
-    item = load_single_equipment(uuid)
+    equipment: Equipment = Load_single_equipment_object(uuid)
 
-    return {"equipment": item}
+    return {"equipment": equipment.get_dict()}
 
 
 

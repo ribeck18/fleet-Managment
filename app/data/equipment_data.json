@@ -12,5 +12,12 @@
         "status": "Live",
         "notes": "Jerry's truck.",
         "id": "624d0875-4bd5-4960-99b8-6c3804bf7d1c"
+    },
+    {
+        "name": "FORD F-250",
+        "year": "2015",
+        "status": "Live",
+        "notes": "This is a note",
+        "id": "65c24bd6-9e97-4505-9d65-a12321a59d01"
     }
 ]

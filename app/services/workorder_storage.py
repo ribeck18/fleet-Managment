@@ -55,6 +55,33 @@ def add_workorder(title: str, info: str, user: str, severity: str, equipment: st
 
     return workorder
 
+def get_equip_workorders(equip_id: str):
+    """
+    Load all work orders, compare the equip_id to the Equipment uuid stored on each list. Append each matching workorder to a list of workorders
+    
+    :param equip_id: Equipment UUID
+    :type equip_id: str
+
+    :return: List of work order dictionaries
+    """
+    all_workorders = load_workorders()
+
+    workorders = []
+
+    for i in all_workorders:
+        equipment = i.get("equipment")
+
+        if equip_id == equipment:
+            workorders.append(i)
+    
+    #check if any work orders were found
+    if workorders == []:
+        return []
+    
+    return workorders
+            
+
+
 
 
 
