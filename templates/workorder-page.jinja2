@@ -1,0 +1,18 @@
+{% extends "layout.jinja2"%}
+
+{% block content %}
+
+    <h1>Work Orders Page</h1>
+
+    {% if workorder_list %}
+        <ul>
+            {% for item in workorder_list %}
+            <li>
+                <a href="/workorders/{{ item.id }}"> {{item.title}} - Severity: {{item.severity}} - User: {{item.user}} -- ({{item.info}})</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Workorders found.</p>
+    {% endif %}
+{% endblock content%}

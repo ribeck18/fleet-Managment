@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from classes.WorkOrders import WorkOrder
+from app.services.equipment_storage import Load_single_equipment_object
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "workorders_data.json"
 
@@ -79,8 +80,34 @@ def get_equip_workorders(equip_id: str):
         return []
     
     return workorders
-            
 
+def get_single_workorder(workorder_id: str):
+    workorders = load_workorders()
+
+    for i in workorders:
+        i_id = i["id"]
+
+        if i_id == workorder_id:
+            workorder = i
+    return workorder
+
+#Get the equipment item associated with the workorder.
+def get_equipment(workorder_id):
+    workorder_list = load_workorders()
+
+    for item in workorder_list:
+        item_id = item["id"]
+
+        if workorder_id == item_id:
+            workorder = item
+    
+    equipment_uuid = item["equipment"]
+
+    equipment = Load_single_equipment_object(equipment_uuid)
+
+    return equipment
+    
+    
 
 
 

@@ -3,14 +3,16 @@ import uuid
 class Equipment:
 
     #Initallize a new object
-    def __init__(self, name, year, status, notes=""):
+    def __init__(self, name, year, status, notes="", id=None):
         self.name = name
         self.year = year
         self.status = status
         self.notes = notes
-        self.id = str(uuid.uuid4())
+        self.id = id or str(uuid.uuid4())
+
 
     #Rehydrate an object from json
+    @classmethod
     def from_dict(cls, data: dict):
         return cls(
             name = data["name"],

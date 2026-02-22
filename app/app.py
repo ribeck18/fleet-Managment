@@ -7,10 +7,12 @@ from pathlib import Path
 
 
 ##To Do
-#When a work order is saved the entered equipment uuid is not shown in the table. note: it is saved in the json file.
-#Clean up the html
-#add css
-#when a workorder is created add a dropdown menu to select an equipment item. 
+#Add a work order page
+#Add functionality to edit equipment items
+#Add functionality to resolve workorders
+#Add functionality to open a workorder detail window
+#Add user log in features
+#Add a maintenance tracker
 
 app = FastAPI()
 

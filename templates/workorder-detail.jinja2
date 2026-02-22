@@ -1,0 +1,10 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+
+    <h1>Workorder Detail Page</h1>
+
+    <h3>{{ workorder.title }} {{ workorder.severity }} {{workorder.info}}</h3>
+    <h4>{{ equipment.name }}</h4>
+
+{% endblock content%}

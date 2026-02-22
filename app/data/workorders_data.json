@@ -16,5 +16,14 @@
         "equipment": "1b31d700-4b68-49e1-963f-f5204703ea39",
         "date": "2026-02-18 11:12:04.449185",
         "id": "93d26e41-099c-4ab8-9995-32193095bd39"
+    },
+    {
+        "title": "Flat Tire",
+        "info": "Rear driver side tire has a hole in it",
+        "user": "Riley",
+        "severity": "High",
+        "equipment": "624d0875-4bd5-4960-99b8-6c3804bf7d1c",
+        "date": "2026-02-21 18:44:02.952624",
+        "id": "2c8d0b45-7b9d-48be-ad7c-57e27e9aaf12"
     }
 ]

@@ -11,6 +11,18 @@ class WorkOrder():
         self.equipment = equipment
         self.date = str(datetime.now())
         self.id = str(uuid.uuid4())
+
+    @classmethod
+    def from_dict(cls, data: dict):
+        return cls(
+            title = data.get("title"),
+            info = data.get("info"),
+            user = data.get("user"),
+            severity = data.get("severity"),
+            equipment = data.get("equipment"),
+            date = data.get("date"),
+            id = data.get("id")
+        )
     
     def get_string(self):
         """
@@ -28,4 +40,11 @@ class WorkOrder():
         """
         return self.__dict__
     
+    def get_equip(self):
+        """
+        Returns the equipment item id associated with the class
+
+        :return: equipment uuid
+        """
+        return self.equipment    
 

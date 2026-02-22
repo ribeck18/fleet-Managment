@@ -4,7 +4,7 @@ from fastapi.requests import Request
 from fastapi.templating import Jinja2Templates
 
 from app.services.equipment_storage import load_equipment, load_single_equipment_dict
-from app.services.workorder_storage import load_workorders, get_equip_workorders
+from app.services.workorder_storage import load_workorders, get_equip_workorders, get_equipment, get_single_workorder
 
 
 router = APIRouter()
@@ -46,3 +46,29 @@ def equipment_detail(request: Request, equip_id: str):
             "workorders": workorders
         }
     )
+
+#Work orders page
+@router.get("/workorders", response_class=HTMLResponse)
+def workorder_page(request: Request):
+
+    return templates.TemplateResponse(
+        "workorder-page.jinja2",
+        {"request": request, "workorder_list": load_workorders()}
+    )
+
+
+#Work order detail page
+@router.get("/workorders/{workorder_id}")
+def workorder_detail(request: Request, workorder_id):
+    workorder = get_single_workorder(workorder_id)
+    equipment = get_equipment(workorder_id)
+
+    return templates.TemplateResponse(
+        "workorder-detail.jinja2",
+        {"request": request,
+        "equipment": equipment,
+         "workorder": workorder}
+    )
+
+
+
