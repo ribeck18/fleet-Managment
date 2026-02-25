@@ -7,7 +7,6 @@ from pathlib import Path
 
 
 ##To Do
-#Add a work order page
 #Add functionality to edit equipment items
 #Add functionality to resolve workorders
 #Add functionality to open a workorder detail window

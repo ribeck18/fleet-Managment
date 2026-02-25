@@ -7,7 +7,7 @@ class WorkOrder():
         self.title = title
         self.info = info 
         self.user = user
-        self.severity = severity
+        self.severity = severity # 1. extreme 2. high 3. medium 4. Low 5. resolved
         self.equipment = equipment
         self.date = str(datetime.now())
         self.id = str(uuid.uuid4())
@@ -18,7 +18,7 @@ class WorkOrder():
             title = data.get("title"),
             info = data.get("info"),
             user = data.get("user"),
-            severity = data.get("severity"),
+            severity = data.get("severity"), 
             equipment = data.get("equipment"),
             date = data.get("date"),
             id = data.get("id")

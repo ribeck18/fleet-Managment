@@ -19,5 +19,12 @@
         "status": "Live",
         "notes": "This is a note",
         "id": "65c24bd6-9e97-4505-9d65-a12321a59d01"
+    },
+    {
+        "name": "Kenworth Truck",
+        "year": "2004",
+        "status": "Live",
+        "notes": "18 wheeler",
+        "id": "015a12a2-166f-4492-b271-307cf5da2902"
     }
 ]
