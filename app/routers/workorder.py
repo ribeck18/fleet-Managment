@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Form
 from fastapi.responses import RedirectResponse
-from app.services.workorder_storage import add_workorder, load_workorders
+from app.services.workorder_storage import add_workorder, load_workorders, resolve
 
 router = APIRouter()
 
@@ -15,3 +15,9 @@ def load_workorders():
 def create_workorder(title: str= Form(), info: str = Form() , user: str= Form(), severity: str= Form(), equipment: str= Form()):
     add_workorder(title, info, user, severity, equipment)
     return RedirectResponse(url="/", status_code=303)
+
+#Resolve a workorder -- typically would use patch rather than post but html only supports get and post
+@router.post("/api/workorders/{workorder_id}/resolve")
+def resolve_workorder(workorder_id):
+    resolved_workorder = resolve(workorder_id)
+    return {"workorder resolved": resolved_workorder}

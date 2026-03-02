@@ -2,28 +2,28 @@
     {
         "title": "Oil Change",
         "info": "oil change mileage on window sticker has been reached.",
-        "user": "Riley Beck",
-        "severity": "Medium",
-        "equipment": "624d0875-4bd5-4960-99b8-6c3804bf7d1c",
-        "date": "2026-02-17 09:33:30.046223",
-        "id": "09270812-c9d0-4d1b-9a6e-2076f1bd3280"
-    },
-    {
-        "title": "oil change",
-        "info": "needs oil",
         "user": "Riley",
-        "severity": "Medium",
-        "equipment": "1b31d700-4b68-49e1-963f-f5204703ea39",
-        "date": "2026-02-18 11:12:04.449185",
-        "id": "93d26e41-099c-4ab8-9995-32193095bd39"
+        "severity": "High",
+        "equipment": "2cfbbc70-bbb7-49b5-a8b1-bfb0d2209efd",
+        "date": "2026-02-25 10:33:51.120165",
+        "id": "5c2fc0b1-9c38-4b43-9211-50417dac0231"
     },
     {
         "title": "Flat Tire",
         "info": "Rear driver side tire has a hole in it",
         "user": "Riley",
-        "severity": "High",
-        "equipment": "624d0875-4bd5-4960-99b8-6c3804bf7d1c",
-        "date": "2026-02-21 18:44:02.952624",
-        "id": "2c8d0b45-7b9d-48be-ad7c-57e27e9aaf12"
+        "severity": "Medium",
+        "equipment": "015a12a2-166f-4492-b271-307cf5da2902",
+        "date": "2026-02-25 10:34:13.910397",
+        "id": "5ea6a3c6-326f-4c13-bf33-1124f5695608"
+    },
+    {
+        "title": "Rough Idle",
+        "info": "Idles rough, only when hot.",
+        "user": "Riley",
+        "severity": "Medium",
+        "equipment": "2cfbbc70-bbb7-49b5-a8b1-bfb0d2209efd",
+        "date": "2026-02-25 10:34:48.594777",
+        "id": "988ed03a-77b4-435b-9fe0-3f9cf97a0711"
     }
 ]

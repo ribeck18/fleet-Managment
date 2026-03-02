@@ -19,12 +19,12 @@ def load_workorders():
     
     return data
 
-def save_workorder(workorders: dict):
+def save_workorder(workorders: list):
     """
-    adds workorder dict to the json file.
-    
-    :param workorders: workorder info
-    :type workorders: dict
+    rewrites json file with the workorder list.
+
+    :param workorders: updated workorder list
+    :type workorders: list
     """
     with open(DATA_PATH, "w") as f:
         json.dump(workorders, f, indent=4, default=str)
@@ -107,7 +107,48 @@ def get_equipment(workorder_id):
 
     return equipment
     
+def update_workorder(workorder_id: str):
+    workorder = get_single_workorder(workorder_id)
+
+
+
+
+#Note this won't edit, it will just create a new one with the same uuid.
+def resolve(workorder_id: str):
+    """
+    Finds a specific workorder, and changes its severity level to resolved.
+    The workorder list is then updated with the now updated workorder.
+    The updated workorder list is saved to the json file.
+
+    :param workorder_id: UUID of the workorder to resolve
+    :type workorder_id: str
+    """
+    # Load workorders as a list
+    my_list = load_workorders()
+    # Find the correct work order and its index in the my_list variable
+    for i, w in enumerate(my_list):
+        w_id = w["id"]
+
+        if w_id == workorder_id:
+            workorder = w
+            list_index = i
+    # Edit the workorder item severity to resolved
+    workorder["severity"] = "resolved"
+    #Replace the index in the list with the updated workorder.
+    my_list[i] = workorder
+
+    save_workorder(my_list)
+
+    return workorder
+
+
+            
+
+
+
     
+
+
 
 
 
