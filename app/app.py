@@ -5,7 +5,6 @@ from .routers import equipment, workorder, html, user
 
 from pathlib import Path
 
-
 ##To Do
 #Add functionality to edit equipment items
 #Add functionality to resolve workorders
