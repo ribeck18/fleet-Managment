@@ -93,20 +93,26 @@ def get_single_workorder(workorder_id: str):
 
 #Get the equipment item associated with the workorder.
 def get_equipment(workorder_id):
+    """
+        This function loads the equipment item that is associated with the workorder.
+    """
     workorder_list = load_workorders()
 
+    # Finds the uuid for each workorder in the list, so that it can be compared to the workorder UUID argument.
     for item in workorder_list:
         item_id = item["id"]
 
+        #Set workorder to the current item in the loop so that equip UUID can be accessed. 
         if workorder_id == item_id:
             workorder = item
     
-    equipment_uuid = item["equipment"]
+    equipment_uuid = workorder["equipment"] # The bug was because item was here instead of workorder.
 
     equipment = Load_single_equipment_object(equipment_uuid)
 
     return equipment
     
+
 def update_workorder(workorder_id: str):
     workorder = get_single_workorder(workorder_id)
 
