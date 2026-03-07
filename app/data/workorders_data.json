@@ -3,7 +3,7 @@
         "title": "Oil Change",
         "info": "oil change mileage on window sticker has been reached.",
         "user": "Riley",
-        "severity": "High",
+        "severity": "resolved",
         "equipment": "2cfbbc70-bbb7-49b5-a8b1-bfb0d2209efd",
         "date": "2026-02-25 10:33:51.120165",
         "id": "5c2fc0b1-9c38-4b43-9211-50417dac0231"
@@ -18,12 +18,12 @@
         "id": "5ea6a3c6-326f-4c13-bf33-1124f5695608"
     },
     {
-        "title": "Rough Idle",
-        "info": "Idles rough, only when hot.",
+        "title": "Oil Change",
+        "info": "oil change mileage on window sticker has been reached.",
         "user": "Riley",
-        "severity": "Medium",
+        "severity": "resolved",
         "equipment": "2cfbbc70-bbb7-49b5-a8b1-bfb0d2209efd",
-        "date": "2026-02-25 10:34:48.594777",
-        "id": "988ed03a-77b4-435b-9fe0-3f9cf97a0711"
+        "date": "2026-02-25 10:33:51.120165",
+        "id": "5c2fc0b1-9c38-4b43-9211-50417dac0231"
     }
 ]

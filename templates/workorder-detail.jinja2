@@ -7,6 +7,9 @@
     <h3>{{ workorder.title }} {{ workorder.severity }} {{workorder.info}}</h3>
     <h4>{{ equipment.name }}</h4>
 
-    <button method="patch" action="/api/workorders/resolve">Resolve</button>
+    <form action="/api/workorders/{{ workorder.id }}/resolve" method="post"> 
+        <button type="submit">Resolve</button>
+    </form>
+    
     <button>Edit</button>
 {% endblock content%}
