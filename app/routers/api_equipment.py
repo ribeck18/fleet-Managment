@@ -15,7 +15,7 @@ def new_equipment(
     notes: str = Form("")
 ): 
     new = create_equipment(name, year, status, notes)
-    return RedirectResponse(url="/", status_code=303)
+    return {"new_equipment": new}
 
 #Get equipment list
 @router.get("/api/equipment/list")

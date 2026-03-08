@@ -26,5 +26,12 @@
         "status": "Live",
         "notes": "18 wheeler",
         "id": "015a12a2-166f-4492-b271-307cf5da2902"
+    },
+    {
+        "name": "Skid Loader",
+        "year": "2010",
+        "status": "Live",
+        "notes": "This is a skid loader",
+        "id": "b21ec0ab-9bad-4b5d-a0b6-c988dc44a67c"
     }
 ]

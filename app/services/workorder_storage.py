@@ -89,6 +89,8 @@ def get_single_workorder(workorder_id: str):
 
         if i_id == workorder_id:
             workorder = i
+            break
+        
     return workorder
 
 #Get the equipment item associated with the workorder.
