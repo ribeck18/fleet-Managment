@@ -8,7 +8,7 @@
 
     <div id="equipment-form" style="display: none; margin-top: 1em;">
         {# uses the /api/equipment/new endpoint. The Method matches the endpoint decorator. #}
-        <form method="post" action="/api/equipment/new">
+        <form method="post" action="/equipment/new">
             <label>Name:</label>
             <input type="text" name="name" required>
 
@@ -59,7 +59,7 @@
     <button type="button" onclick="ToggleWorkorderForm()">Add Workorder</button>
 
     <div id="new-workorder" style="display: none; margin-top: 1em;">
-        <form method="post" action="/api/workorders/add">
+        <form method="post" action="/workorders/add">
             <label>Name:</label>
             <input type="text" name="title" required>
 

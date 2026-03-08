@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from .routers import equipment, workorder, html, user
+from .routers import api_equipment, api_user, api_workorder, html_main, html_equipment, html_workorder
 
 from pathlib import Path
 
@@ -19,7 +19,10 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 #Include all routers
-app.include_router(html.router)
-app.include_router(equipment.router)
-app.include_router(workorder.router)
-app.include_router(user.router)
+app.include_router(html_main.router)
+app.include_router(api_equipment.router)
+app.include_router(api_workorder.router)
+app.include_router(api_user.router)
+app.include_router(html_equipment.router)
+app.include_router(html_workorder.router)
+app.include_router(html_workorder.router)

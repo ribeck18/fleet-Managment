@@ -25,5 +25,14 @@
         "equipment": "2cfbbc70-bbb7-49b5-a8b1-bfb0d2209efd",
         "date": "2026-02-25 10:33:51.120165",
         "id": "5c2fc0b1-9c38-4b43-9211-50417dac0231"
+    },
+    {
+        "title": "Oil Change",
+        "info": "oil change mileage on window sticker has been reached.",
+        "user": "Riley",
+        "severity": "resolved",
+        "equipment": "2cfbbc70-bbb7-49b5-a8b1-bfb0d2209efd",
+        "date": "2026-02-25 10:33:51.120165",
+        "id": "5c2fc0b1-9c38-4b43-9211-50417dac0231"
     }
 ]
