@@ -4,8 +4,9 @@
 
     <h1>Workorder Detail Page</h1>
 
-    <h3>{{ workorder.title }} {{ workorder.severity }} {{workorder.info}}</h3>
-    <h4>{{ equipment.name }}</h4>
+    <h2>{{ equipment.name }}</h2>
+    <h3>{{ workorder.title }}: {{workorder.info}}</h3> 
+    <h4>Status: {{ workorder.severity }}</h4>
 
     <form action="/workorders/{{ workorder.id }}/resolve" method="post"> 
         <button type="submit">Resolve</button>
