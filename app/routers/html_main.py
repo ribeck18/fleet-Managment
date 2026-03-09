@@ -70,5 +70,15 @@ def workorder_detail(request: Request, workorder_id):
          "workorder": workorder}
     )
 
-
-
+# This is for the new home page
+@router.get("/home", response_class=HTMLResponse)
+def temp_home_page(request: Request):
+    """
+    get and return the HTML for the home page
+    
+    :returns: HTML from home.jinja2
+    """
+    return templates.TemplateResponse(
+        "new-home.jinja2",
+        {'request': request}
+    )
