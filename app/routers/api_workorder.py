@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Form
-from fastapi.responses import RedirectResponse
 from app.services.workorder_storage import add_workorder, load_workorders, resolve
 
 router = APIRouter()
