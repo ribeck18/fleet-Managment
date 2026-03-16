@@ -12,7 +12,7 @@
         "title": "Flat Tire",
         "info": "Rear driver side tire has a hole in it",
         "user": "Riley",
-        "severity": "resolved",
+        "severity": "High",
         "equipment": "015a12a2-166f-4492-b271-307cf5da2902",
         "date": "2026-02-25 10:34:13.910397",
         "id": "5ea6a3c6-326f-4c13-bf33-1124f5695608"
