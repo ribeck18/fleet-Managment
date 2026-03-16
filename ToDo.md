@@ -9,3 +9,8 @@
 
 # Bugs
 - 
+
+# Refactor
+- Define classes
+- Make services functional for all the classes.
+- Clean up routes

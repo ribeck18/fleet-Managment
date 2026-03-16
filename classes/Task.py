@@ -1,15 +1,14 @@
 from pydantic import BaseModel, Field
 import uuid
+from datetime import date
 
 
-class Equipment(BaseModel):
-
-    name: str
-    notes: str
-    model: str
-    year: int
-    status: str
-    id: uuid.UUID = Field(default_factory=uuid.uuid4)
+class Task(BaseModel):
+    title: str
+    description: str
+    equipment: uuid.UUID
+    created_date: date = Field(default_factory=date.today())
+    self_id: uuid.UUID = Field(default_factory=uuid.uuid4)
 
     def get_dict(self) -> dict:
         """Get the object as a dict
@@ -20,7 +19,7 @@ class Equipment(BaseModel):
         return self.model_dump()
 
     @classmethod
-    def rehydrate(cls, payload: dict) -> "Equipment":
+    def rehydrate(cls, payload: dict) -> "Task":
         """
             Rehydrate an object from a dictionary format. Ensures that UUID remains the same so that duplicate items are not created.
 
